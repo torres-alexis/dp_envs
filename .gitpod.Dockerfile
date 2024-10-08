@@ -2,8 +2,6 @@
 # Use the Gitpod base image
 FROM gitpod/workspace-base:latest
 
-# gitpod layers..
-RUN echo "Break"
 
 # Switch to gitpod user
 USER gitpod
@@ -26,16 +24,6 @@ RUN conda config --add channels conda-forge && \
 
 # Set libmamba as solver
 RUN conda config --set solver libmamba
-
-# gitpod layers..
-RUN echo "Break"
-
-# Install Conda environment
-COPY environment.yml /tmp/environment.yml
-RUN conda env create -f /tmp/environment.yml
-
-# Activate the environment by default
-RUN echo "conda activate dp" >> $HOME/.bashrc
 
 # Set the Python interpreter path for .vscode/settings.json
 ENV PYTHON_INTERPRETER="$HOME/miniconda/bin/python"

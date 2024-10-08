@@ -6,6 +6,4 @@ channels:
 dependencies:
   - python=3.10
   - r
-  -pip
-  - pip:
-    - rpy2
+  - pip

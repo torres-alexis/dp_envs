@@ -35,9 +35,6 @@ RUN echo "conda activate dp" >> $HOME/.bashrc
 # Persist $HOME directory across workspace restarts
 RUN echo 'create-overlay $HOME' > "$HOME/.runonce/1-home_persist"
 
-# Remove pyenv shims from PATH to avoid conflicts
-ENV PATH=$(echo $PATH | tr ':' '\n' | grep -v '/home/gitpod/.pyenv/shims' | tr '\n' ':')
-
 # Set the Python interpreter path for .vscode/settings.json
 ENV PYTHON_INTERPRETER="$HOME/miniconda/bin/python"
 ENV PYCHARM_PYTHON_PATH="${PYTHON_INTERPRETER}"

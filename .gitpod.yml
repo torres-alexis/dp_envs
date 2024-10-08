@@ -1,6 +1,17 @@
 # .gitpod.yml
+
 image:
   file: .gitpod.Dockerfile
+
+tasks:
+  - name: Start Workspace
+    init: |
+      # pip3 install -r requirements.txt
+      conda env create -f environment.yml
+      echo "Conda environment is activated."
+    command: |
+      echo "Running: $GITPOD_WORKSPACE_URL"
+      # Any additional startup commands below
 
 vscode:
   extensions:
@@ -9,11 +20,4 @@ vscode:
     - ms-toolsai.jupyter
     - ms-toolsai.jupyter-keymap
     - ms-toolsai.jupyter-renderers
-    - Ikuyadeu.r@1.2.1:z5vr1v1bfS++U/aHLSXQ6Q==
-
-    
-tasks:
-  - init: |
-      conda env create -f environment.yml
-    command: |
-      source activate dp
+    - Ikuyadeu.r-pack

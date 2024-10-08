@@ -1,7 +1,5 @@
 # .gitpod.Dockerfile
-# Use the Gitpod base image
-FROM gitpod/workspace-base:latest
-
+FROM nfcore/gitpod:latest
 
 # Switch to gitpod user
 USER gitpod
@@ -24,6 +22,18 @@ RUN conda config --add channels conda-forge && \
 
 # Set libmamba as solver
 RUN conda config --set solver libmamba
+
+# Copy environment file
+COPY environment.yml /tmp/environment.yml
+
+# Create conda environment
+RUN conda env create -f /tmp/environment.yml \
+    && conda clean -afy
+
+# Enable Jupyter extensions
+RUN /bin/bash -c "source activate dp_processing \
+    && jupyter contrib nbextension install --user \
+    && jupyter nbextensions_configurator enable --user"
 
 # Set the Python interpreter path for .vscode/settings.json
 ENV PYTHON_INTERPRETER="$HOME/miniconda/bin/python"

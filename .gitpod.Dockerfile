@@ -1,4 +1,6 @@
 # .gitpod.Dockerfile
+# gitpod layers..
+RUN echo "Break"
 
 # Use the Gitpod base image
 FROM gitpod/workspace-base:latest

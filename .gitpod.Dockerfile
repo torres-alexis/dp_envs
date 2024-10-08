@@ -1,9 +1,9 @@
 # .gitpod.Dockerfile
-# gitpod layers..
-RUN echo "Break"
-
 # Use the Gitpod base image
 FROM gitpod/workspace-base:latest
+
+# gitpod layers..
+RUN echo "Break"
 
 # Switch to gitpod user
 USER gitpod

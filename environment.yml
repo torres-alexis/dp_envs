@@ -1,0 +1,10 @@
+name: dp
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.10
+  - r
+  - pip:
+    - rpy2

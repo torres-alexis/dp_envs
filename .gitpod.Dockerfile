@@ -35,9 +35,6 @@ RUN conda env create -f /tmp/environment.yml
 # Activate the environment by default
 RUN echo "conda activate dp" >> $HOME/.bashrc
 
-# Persist $HOME directory across workspace restarts
-RUN echo 'create-overlay $HOME' > "$HOME/.runonce/1-home_persist"
-
 # Set the Python interpreter path for .vscode/settings.json
 ENV PYTHON_INTERPRETER="$HOME/miniconda/bin/python"
 ENV PYCHARM_PYTHON_PATH="${PYTHON_INTERPRETER}"

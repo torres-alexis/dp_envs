@@ -1,5 +1,9 @@
 # Gitpod Environments
 
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/yourusername/yourrepository)
+
+---
+
 ### Base Environment
 - gitpod/workspace-base:latest
 
@@ -17,5 +21,5 @@ Conda environment 'dp':
 - Python 3.10
 
 ## Getting Started
-1. Click the Gitpod button to launch the environment
+1. Click the Gitpod button above to launch the environment
 2. Wait for the environment to build and initialize

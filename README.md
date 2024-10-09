@@ -37,12 +37,6 @@
     # Generates HTML report: ${NUM}_log2fc_flag_characterize_GLbulkRNAseq.html
     ```
 
-4. **Retrieve and inspect the HTML report**:
-    - **'In [8]' cell**: Displays the printout with filtered out gene rows.
-    - **'Out [9]' cell**: Examine dataframe rows for:
-        - **Close to zero log2fc value**: May indicate that variation between direct and Deseq2 methods caused sign flip.
-        - **High standard deviation to mean ratio (>1)**: Suggests higher variation between the methods.
-
 </details>
 
 ---
@@ -70,9 +64,5 @@
     jupyter nbconvert --to html ${NUM}_combined_ercc_analysis_GLbulkRNAseq.ipynb
     # Generates HTML report: ${NUM}_combined_ercc_analysis_GLbulkRNAseq.html
     ```
-
-4. **Retrieve and inspect the HTML report**:
-    - **'In [8]' cell**: Displays the printout with filtered out rows.
-    - **'Out [9]' cell**: Examine the output for ERCC metrics and ratios.
 
 </details>

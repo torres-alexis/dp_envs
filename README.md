@@ -44,3 +44,35 @@
         - **High standard deviation to mean ratio (>1)**: Suggests higher variation between the methods.
 
 </details>
+
+---
+
+## ERCC Analysis
+
+<details>
+<summary>Click here to expand...</summary>
+
+### Steps
+
+1. **Launch** the Gitpod environment.
+2. **Load the required data**:
+   - `ISA.zip` file for the dataset.
+   - `RSEM_Unnormalized_Counts_GLbulkRNAseq.csv` file from the `/03-RSEM_Counts` output directory.
+3. **Run the notebook execution** command:
+
+    ```bash
+    NUM=<YOUR_FILE_ACCESSION> # Usually formatted as GLDS-NNN. This ensures dataset name inclusion in final output.
+
+    papermill notebooks/combined_ercc_analysis.ipynb ${NUM}_combined_ercc_analysis_GLbulkRNAseq.ipynb \
+      -p ISA_PATH ${NUM}_ISA.zip \
+      -p UNNORMALIZED_COUNTS_PATH ${NUM}_RSEM_Unnormalized_Counts_GLbulkRNAseq.csv
+
+    jupyter nbconvert --to html ${NUM}_combined_ercc_analysis_GLbulkRNAseq.ipynb
+    # Generates HTML report: ${NUM}_combined_ercc_analysis_GLbulkRNAseq.html
+    ```
+
+4. **Retrieve and inspect the HTML report**:
+    - **'In [8]' cell**: Displays the printout with filtered out rows.
+    - **'Out [9]' cell**: Examine the output for ERCC metrics and ratios.
+
+</details>
